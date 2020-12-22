@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
+
+
+	<!--Enables MVC annotations like @Valide, @RequestMapping, @RequestParam, @pathVariable 
+	     @responceBody, @requestBody etc. -->
+	<mvc:annotation-driven validator="validator" />
+
+	<!--Enables Spring annotations @Repository, @Service, @Component and @Controller spring beans -->
+	<context:component-scan base-package="in.co.rays.project0.*" />
+
+	<!--resources locations dene ke liye kisi ka bhi path dete h image,css,js,report,etc -->
+	<mvc:resources mapping="/resources/**" location="/resources/" />
+
+	<!--Tiles configuration start -->
+	<bean id="tilesConfigurer"
+		class="org.springframework.web.servlet.view.tiles2.TilesConfigurer">
+		<property name="definitions">
+			<list>
+				<value>/WEB-INF/tiles.xml</value>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="viewResolver"
+		class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+		<property name="viewClass">
+			<value>
+				org.springframework.web.servlet.view.tiles2.TilesView
+			</value>
+		</property>
+	</bean>
+	<!--Tiles configuration End -->
+
+	<!-- Apply Front Controller -->
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/ctl/**/*" />
+			<mvc:mapping path="/resources/doc/**/*" />
+			<bean class="in.co.rays.project0.Controller.FrontCtl" />
+		</mvc:interceptor>
+	</mvc:interceptors>
+
+	<!-- i18n Start -->
+	<!-- Defines the message resources -->
+	<bean id="messageSource"
+		class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+		<property name="basename" value="classpath:messages" />
+		<property name="defaultEncoding" value="UTF-8" />
+	</bean>
+
+	<bean id="localeResolver"
+		class="org.springframework.web.servlet.i18n.CookieLocaleResolver">
+		<property name="defaultLocale" value="en"></property>
+	</bean>
+
+	<!-- har bar check krta h before request and before response -->
+	<mvc:interceptors>
+		<bean id="localeChangeInterceptor"
+			class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
+			<property name="paramName" value="lang" />
+		</bean>
+	</mvc:interceptors>
+
+	<!-- JSR-303 -->
+	<bean id="validator"
+		class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean">
+		<property name="validationMessageSource" ref="messageSource" />
+	</bean>
+
+	<!-- i18n End -->
+
+	<!-- Database Configuration -->
+	<import resource="hibernate-servlet.xml" />
+
+	<!-- Mail Sender Start -->
+    <bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+
+		<property name="host" value="smtp.gmail.com" />
+		<property name="port" value="587" />
+		<property name="protocol" value="smtp" />
+		<property name="username" value="webmaster@sunrays.co.in" />
+		<property name="password" value="PA$$1234" />
+
+		<property name="javaMailProperties">
+			<props>
+				<prop key="mail.smtp.auth">true</prop>
+				<prop key="mail.smtp.starttls.enable">true</prop>
+				<prop key="mail.smtp.debug">false</prop>
+			</props>
+		</property>
+	</bean>
+	<!-- Mail Sender End -->
+</beans>

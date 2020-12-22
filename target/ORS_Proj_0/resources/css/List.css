@@ -1,0 +1,23 @@
+@CHARSET "ISO-8859-1";
+
+table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+/* tr, td{
+    text-align: left;
+    padding: 8px;
+} */
+th {
+	background:silver;
+	padding: 8px;
+}
+input[type="submit"] {
+	background-color:silver;
+	
+}
+input[type="text"]{
+
+	
+}

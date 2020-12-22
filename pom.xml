@@ -1,0 +1,383 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>in.co.rays</groupId>
+  <artifactId>ORS_Proj_0</artifactId>
+  <packaging>war</packaging>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>ORS_Proj_0 Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+     <properties>
+		<springframework.version>4.3.10.RELEASE</springframework.version>
+	</properties>
+	
+<dependencies>
+<!-- https://mvnrepository.com/artifact/net.sf.sociaal/freetts -->
+<dependency>
+    <groupId>net.sf.sociaal</groupId>
+    <artifactId>freetts</artifactId>
+    <version>1.2.2</version>
+</dependency>
+
+		 <dependency>
+			<groupId>net.sf.jasperreports</groupId>
+			<artifactId>jasperreports</artifactId>
+			<version>6.1.0</version>
+		</dependency>
+
+	
+		<dependency>
+			<groupId>org.codehaus.groovy</groupId>
+			<artifactId>groovy-all</artifactId>
+			<version>2.4.7</version>
+		</dependency>
+	<!--Spring Dependencies start -->
+
+	<!--Spring core/commons-logging -->
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-core</artifactId>
+		<version>${springframework.version}</version>
+	</dependency>
+ 
+	<!-- Spring context/aop/beans/expression -->
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-context</artifactId>
+		<version>${springframework.version}</version>
+	</dependency>
+
+
+	<!-- Spring ORM/JDBC/tx -->
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-orm</artifactId>
+		<version>${springframework.version}</version>
+	</dependency>
+
+
+
+	<!--Spring web -->
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-web</artifactId>
+		<version>${springframework.version}</version>
+	</dependency>
+
+	<!--Spring webmvc -->
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-webmvc</artifactId>
+		<version>${springframework.version}</version>
+	</dependency>
+
+	<!--Spring context support -> cache/maill/scheduling/ui( freemarker/jasperreport/ velocity) -->
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-context-support</artifactId>
+		<version>${springframework.version}</version>
+	</dependency>
+
+<!--Spring Dependencies end -->
+
+	<!-- Hibernate -->
+	<!-- https://mvnrepository.com/ artifact/org.hibernate/ hibernate-core -->
+	<dependency>
+		<groupId>org.hibernate</groupId>
+		<artifactId>hibernate-core</artifactId>
+		<version>4.3.10.Final</version>
+	</dependency>
+
+	<!-- https://mvnrepository.com/ artifact/mysql/mysql- connector-java -->
+	<dependency>
+		<groupId>mysql</groupId>
+		<artifactId>mysql-connector-java</artifactId>
+		<version>5.0.5</version>
+	</dependency>
+
+
+	<!-- DataSourse and DCP -->
+	<!-- https://mvnrepository.com/ artifact/com.mchange/c3p0 -->
+	<dependency>
+		<groupId>com.mchange</groupId>
+		<artifactId>c3p0</artifactId>
+		<version>0.9.5.2</version>
+	</dependency>
+
+
+
+	<!-- Sevlet Jar -->
+	<dependency>
+		<groupId>javax.servlet</groupId>
+		<artifactId>javax.servlet-api</artifactId>
+		<version>3.1.0</version>
+	</dependency>
+
+	<!-- JSTL Tag -->
+	<dependency>
+		<groupId>javax.servlet</groupId>
+		<artifactId>jstl</artifactId>
+		<version>1.2</version>
+	</dependency>
+
+	<!-- Maill -->
+	<dependency>
+		<groupId>javax.mail</groupId>
+		<artifactId>mail</artifactId>
+		<version>1.4.7</version>
+	</dependency>
+
+	<!-- Junit -->
+	<dependency>
+		<groupId>junit</groupId>
+		<artifactId>junit</artifactId>
+		<version>4.11</version>
+		<scope>test</scope>
+	</dependency>
+
+	<!-- Validator -->
+	<dependency>
+		<groupId>javax.annotation</groupId>
+		<artifactId>jsr250-api</artifactId>
+		<version>1.0</version>
+	</dependency>
+
+
+
+
+	<!-- https://mvnrepository.com/ artifact/log4j/log4j -->
+	<dependency>
+		<groupId>log4j</groupId>
+		<artifactId>log4j</artifactId>
+		<version>1.2.17</version>
+	</dependency>
+
+	<!-- tiles -->
+	<dependency>
+		<groupId>commons-beanutils</groupId>
+		<artifactId>commons-beanutils</artifactId>
+		<version>1.7.0</version>
+	</dependency>
+
+	<dependency>
+		<groupId>commons-digester</groupId>
+		<artifactId>commons-digester</artifactId>
+		<version>1.8</version>
+	</dependency>
+	<!-- log4j -->
+	<!-- sel4j api -->
+	<!-- sel4j log4j -->
+
+	<!-- https://mvnrepository.com/ artifact/org.slf4j/slf4j-api -->
+	<dependency>
+		<groupId>org.slf4j</groupId>
+		<artifactId>slf4j-api</artifactId>
+		<version>1.7.14</version>
+	</dependency>
+
+	<dependency>
+		<groupId>org.apache.tiles</groupId>
+		<artifactId>tiles-api</artifactId>
+		<version>2.2.1</version>
+	</dependency>
+
+	<dependency>
+		<groupId>org.apache.tiles</groupId>
+		<artifactId>tiles-core</artifactId>
+		<version>2.2.1</version>
+	</dependency>
+
+	<dependency>
+		<groupId>org.apache.tiles</groupId>
+		<artifactId>tiles-jsp</artifactId>
+		<version>2.2.1</version>
+	</dependency>
+
+	<dependency>
+		<groupId>org.apache.tiles</groupId>
+		<artifactId>tiles-servlet</artifactId>
+		<version>2.2.1</version>
+	</dependency>
+
+	<dependency>
+		<groupId>org.apache.tiles</groupId>
+		<artifactId>tiles-template</artifactId>
+		<version>2.2.1</version>
+	</dependency>
+
+	<dependency>
+		<groupId>javax.validation</groupId>
+		<artifactId>validation-api</artifactId>
+		<version>1.1.0.Final</version>
+	</dependency>
+
+	<dependency>
+		<groupId>org.hibernate</groupId>
+		<artifactId>hibernate-validator</artifactId>
+		<version>5.2.4.Final</version>
+	</dependency>
+
+	<!-- <dependency> <groupId>antlr</groupId> <artifactId>antlr</artifactId>  
+		<version>2.7.6</version> </dependency> <dependency> <groupId>commons-collections</ groupId> 
+		<artifactId>commons- collections</artifactId> <version>3.1</version> </dependency> 
+		<dependency> <groupId>dom4j</groupId> <artifactId>dom4j</artifactId> <version>1.6.1</version> 
+		</dependency> <dependency> <groupId>net.sf.ehcache</ groupId> <artifactId>ehcache</ artifactId> 
+		<version>1.5.0</version> </dependency> -->
+
+
+	<dependency>
+		<groupId>org.springframework.webflow</groupId>
+		<artifactId>spring-binding</artifactId>
+		<version>2.4.7.RELEASE</version>
+	</dependency>
+
+
+	<dependency>
+		<groupId>com.fasterxml.jackson.core</groupId>
+		<artifactId>jackson-core</artifactId>
+		<version>2.5.0</version>
+	</dependency>
+	<dependency>
+		<groupId>com.fasterxml.jackson.core</groupId>
+		<artifactId>jackson-databind</artifactId>
+		<version>2.5.0</version>
+	</dependency>
+	<dependency>
+    <groupId>com.fasterxml.jackson.core</groupId>
+    <artifactId>jackson-annotations</artifactId>
+    <version>2.6.0</version>
+</dependency>
+<dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-test</artifactId>
+    <version>4.3.12.RELEASE</version>
+    <scope>test</scope>
+</dependency>
+</dependencies>
+
+  <build>
+
+
+
+
+<finalName>ORS_Proj_0</finalName>
+<pluginManagement>
+
+
+			<plugins>
+
+				<!--This plugin's configuration is used to store Eclipse m2e settings 
+					only. It has no influence on the Maven build itself. Appears harmless in 
+					NetBeans -->
+
+
+				<!-- <plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-war-plugin</artifactId> 
+					<version>2.3</version> <configuration> <filteringDeploymentDescriptors>true</filteringDeploymentDescriptors> 
+					<warName>ORSPROJECT4</warName> </configuration> </plugin> -->
+
+
+				<!-- Java Persistence API settings -->
+
+
+
+				<plugin>
+
+					<!-- used to compile the sources of your project -->
+
+					<groupId>org.codehaus.mojo</groupId>
+
+					<artifactId>jboss-maven-plugin</artifactId>
+
+					<version>1.5.0</version>
+
+
+					<configuration>
+
+						<jbossHome>/home/tanmoy/Jboss</jbossHome>
+
+						<serverName>all</serverName>
+
+						<fileName>target/LoginExample-1.0.war</fileName>
+
+					</configuration>
+
+				</plugin>
+
+
+				<plugin>
+
+					<groupId>org.jboss.as.plugins</groupId>
+
+					<artifactId>jboss-as-maven-plugin</artifactId>
+
+					<version>7.1.1.Final</version>
+
+				</plugin>
+
+
+				<plugin>
+
+					<groupId>org.apache.maven.plugins</groupId>
+
+					<artifactId>maven-compiler-plugin</artifactId>
+
+					<version>3.1</version>
+
+
+					<configuration>
+
+						<source>1.7</source>
+
+						<target>1.7</target>
+
+						<fork>true</fork>
+
+					</configuration>
+
+				</plugin>
+
+				<!-- used during the test phase of the build lifecycle to execute the 
+					unit tests of an application -->
+
+
+
+				<plugin>
+
+					<groupId>org.apache.maven.plugins</groupId>
+
+					<artifactId>maven-surefire-plugin</artifactId>
+
+					<version>2.16</version>
+
+				</plugin>
+
+				<!-- responsible for collecting all artifact dependencies, classes and 
+					resources of the web application and packaging them into a war file -->
+
+
+
+				<plugin>
+
+					<groupId>org.apache.maven.plugins</groupId>
+
+					<artifactId>maven-war-plugin</artifactId>
+
+					<version>2.4</version>
+
+
+					<configuration>
+
+						<failOnMissingWebXml>false</failOnMissingWebXml>
+
+						<webXml>src/main/webapp/WEB-INF/web.xml</webXml>
+
+					</configuration>
+
+				</plugin>
+
+			</plugins>
+
+		</pluginManagement>
+
+</build>
+</project>
